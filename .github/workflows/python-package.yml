@@ -27,10 +27,10 @@ jobs:
       run: |       
         pytest test.py    
     - name: Checking docker installation
-      run: docker run hello-world
+      run: docker run todo_app
     - name: Push to docker Hub
       uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: ilanrod/todo_app:tagname
+        repository: ilanrod/todo_app:latest
